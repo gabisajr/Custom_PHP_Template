@@ -1,0 +1,39 @@
+RewriteEngine On
+RewriteBase /p794/PhaseI/
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+
+php_value max_execution_time 500
+
+php_flag register_globals on
+
+#DirectoryIndex testimonial.php
+
+RewriteRule ^testimonial$ testimonial.php
+
+
+#Home Page:
+RewriteRule ^home$ index.php
+
+
+#CMS: 
+RewriteRule ^cms\/(.+)$ cms_page.php?cms_page_alias=$1
+RewriteRule ^change-lang\/(.+)\/(.+)$ language/change-lang.php?lang_key=$1&lang_id=$2
+
+#user module
+RewriteRule ^signup$ registration/user-registration.php
+RewriteRule ^signin$ login/user-login.php
+RewriteRule ^password-recovery$ forgot-password/forgot-password.php
+RewriteRule ^user-activation\/(.+)$ registration/activate-user.php?activation_code=$1 
+RewriteRule ^ajax-call$ ajax/ajax-request.php
+RewriteRule ^logout$ login/sign-out.php
+
+RewriteRule ^profile$ user-account/user-profile.php
+RewriteRule ^edit-profile$ user-account/edit-user-profile.php
+RewriteRule ^account-setting$ user-account/account-setting.php
+
+RewriteRule ^contact$ contact-us/contact-us.php
+
+#blog:
+RewriteRule ^blog/$ blogs.php
+RewriteRule ^blog/(.*)$ handle-clean-urls.php?$1

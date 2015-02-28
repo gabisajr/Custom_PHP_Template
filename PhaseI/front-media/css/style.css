@@ -1,0 +1,32 @@
+.col-lg-11 {
+    width: 25.667%;
+}
+
+.col-lg-1 {
+    width: 30.333%;
+}
+.row input[type='text'],textarea { min-width: 300px; margin-bottom: 0px; }
+.error {  color: #FF0000;
+          float: left; } 
+.row { margin-bottom: 5px; }
+.msg-success {
+    padding:2px 4px;
+    margin:0px;
+    border:solid 1px #C0F0B9;
+    background:#D5FFC6;
+    color:#48A41C; 
+    font-family:Arial, Helvetica, sans-serif; font-size:14px; 
+    font-weight:bold;
+    text-align:center;
+}
+.msg-error {
+    padding:2px 4px;
+    margin:0px;
+    border:solid 1px #FBD3C6;
+    background:#FDE4E1;
+    color:#CB4721;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+}

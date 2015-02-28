@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /pipl/administrator/
+ErrorDocument 404 /pipl/administrator/404.php
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+DirectoryIndex index.php
+
+#Login Page Link:
+RewriteRule ^log-in$ log-in/login.php
+RewriteRule ^login-action$ log-in/login_action.php
+RewriteRule ^log-out$ log-in/logout.php
+#Home Page:
+RewriteRule ^home$ index.php 
+RewriteRule ^dashboard$ index.php

@@ -1,0 +1,53 @@
+RewriteEngine On
+RewriteBase /p794/PhaseI/backend/
+ErrorDocument 404 /p794/PhaseI/backend/404.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+DirectoryIndex index.php
+
+#Login Page Link:
+RewriteRule ^login$ log-in/login.php
+RewriteRule ^login-action$ log-in/login-action.php
+RewriteRule ^log-out$ log-in/logout.php
+RewriteRule ^forgot-password$ log-in/forgot-password.php
+RewriteRule ^forgot-password-email$ log-in/check-forgot-password-email.php
+RewriteRule ^forgot-password-action$ log-in/forgot-password-action.php
+RewriteRule ^admin-activation\/(.+)$ log-in/admin-activation.php?activation_code=$1
+
+#Global Settings: 
+RewriteRule ^global-settings/list$ global-setting/list.php
+RewriteRule ^global-settings/edit\/(.+)\/(.+)$ global-setting/edit.php?edit_id=$1&lang_id=$2
+RewriteRule ^global-settings/edit-parameter-language\/(.+)$ global-setting/edit-language-parameter.php?edit_id=$1
+RewriteRule ^global-settings/get-global-parameter-language$ global-setting/get-global-parameter-language.php
+
+
+
+#Role Manage Page Link:
+RewriteRule ^role-list$ role/list.php
+RewriteRule ^add-role$ role/add.php
+RewriteRule ^edit-role\/(.+)$ role/add.php?edit_id=$1
+
+#Home Page:
+RewriteRule ^home$ index.php 
+RewriteRule ^dashboard$ index.php
+RewriteRule ^Dashboard$ index.php
+
+#admin manage link
+RewriteRule ^admin-list$ admin/list.php
+RewriteRule ^add-admin$ admin/add.php
+RewriteRule ^add-admin-action$ admin/add-action.php
+RewriteRule ^edit-admin\/(.+)$ admin/edit.php?edit_id=$1
+RewriteRule ^edit-admin-action$ admin/edit-action.php
+RewriteRule ^admin-profile$ admin/admin-profile.php
+
+#testimonial
+RewriteRule ^testimonial-list$ testimonial/list.php
+RewriteRule ^add-testimonial$ testimonial/add.php
+RewriteRule ^edit-testimonial\/(.+)$ testimonial/add.php?edit_id=$1
+RewriteRule ^testimonial-change-status$ testimonial/change-status.php?edit_id=$1
+
+#News-letters Module Links :-
+RewriteRule ^cms-list$ cms/cms-list.php
+RewriteRule ^edit-cms\/(.+)$ cms/edit-cms.php?cms_id=$1
+RewriteRule ^action-edit-cms\/(.+)$ cms/action-edit-cms.php?cms_id=$1
